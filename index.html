@@ -14,9 +14,28 @@
 
 <body>
     <!-- Your HTML content -->
-    <h1 class="display-4">Hello!</h1>
-    <h3 class="lead">This is a simple counter app.</h3>
-    <button class="btn btn-primary" onclick="count()">Count</button>
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h1 class="display-3">Hello!</h1>
+                <button class="btn btn-primary" onclick="plus()">Plus</button>
+                <button class="btn btn-primary" onclick="minus()">Minus</button>
+            </div>
+        </div>
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <p class="display-4" id="greeting">What's your name?</p>
+                    <div class="input-group">
+                        <input autofocus id="name" class="form-control mr-2" placeholder="Name" type="text">
+                        <div class="input-group-append">
+                            <input type="submit" class="btn btn-primary" onclick="updateGreeting(event)">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <!-- Bootstrap JS and its dependencies -->
