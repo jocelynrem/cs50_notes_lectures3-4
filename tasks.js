@@ -14,20 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     document.querySelector('form').onsubmit = (event) => {
-        event.preventDefault(); // Prevent the form from submitting and refreshing the page
+        // Prevent the form from submitting and refreshing the page
+        event.preventDefault();
 
         const task = newTask.value;
 
         const li = document.createElement('li');
         li.innerHTML = task;
-        li.classList.add('list-group-item'); // Add Bootstrap class to the li element
+        // Add Bootstrap class to the li element
+        li.classList.add('list-group-item');
 
-        const ol = document.querySelector('#tasks'); // Select the ordered list element
-        const lastLi = ol.querySelector('li:last-child'); // Get the last li element in the ordered list
+        // Select the ordered list element
+        const ol = document.querySelector('#tasks');
+        // Get the last li element in the ordered list
+        const lastLi = ol.querySelector('li:last-child');
         if (lastLi) {
-            ol.insertBefore(li, lastLi.nextSibling); // Insert the new li element after the last li element
+            // Insert the new li element after the last li element
+            ol.insertBefore(li, lastLi.nextSibling);
         } else {
-            ol.appendChild(li); // If there are no li elements, simply append the new li element
+            // If there are no li elements, simply append the new li element
+            ol.appendChild(li);
         }
 
         newTask.value = '';
